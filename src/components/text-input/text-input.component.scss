@@ -1,0 +1,328 @@
+
+.vut-input-field-container {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    padding: 25px 28px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    background-color: white;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+
+    label {
+        position: absolute;
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.3);
+        transition-duration: 0.25s;
+        top: 18px;
+        left: 30px;
+    }
+
+    input {
+        width: calc(100% - 10px);
+        height: auto;
+        outline: 0px solid transparent;
+        border: 0px solid transparent;
+        background-color: transparent;
+        box-sizing: border-box;
+        color: black;
+        position: relative;
+    }
+    .vut-ti-msg {
+        display: inline-block;
+    }
+    .MuiAccordion-gutters::before {
+        display: none;
+    }
+
+    .vut-hint {
+        font-size: 9px;
+        text-align: left;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-top: -10px;
+        margin-bottom: 6px;
+        margin-left: 2px;
+        opacity: 0.6;
+        color: black;
+        animation-name: hint;
+        transition-delay: 500ms;
+    }
+
+    &:not(.disabled):hover,
+    &.active {
+      border: solid 1px #9e9d9d;
+        .vut-ti-label-bg {
+            display: inline-block;
+            width: calc(100% + 12px);
+            height: 3px;
+            position: absolute;
+            bottom: 5px;
+            left: -6px;
+            z-index: -1;
+        }
+    }
+    &.disabled {
+        input {
+            cursor: not-allowed;
+        }
+    }
+    &.error {
+        background-color: #d600001a !important;
+        // .or-content {
+        //     background-color: #d600001a !important;
+        // }
+    }
+    &.active {
+        border: solid 1px #d10048;
+
+        @keyframes cssAnimation {
+            0%,
+            50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 0.6;
+            }
+        }
+
+        label {
+            color: #d10048;
+            top: -7px;
+            font-size: 11px;
+            left: 30px;
+        }
+
+        .vut-hint {
+            display: block;
+            animation-delay: 300s;
+        }
+
+        .vut-ti-label-bg {
+            background-color: white;
+            display: inline-block;
+            width: calc(100% + 12px);
+            height: 3px;
+            position: absolute;
+            bottom: 5px;
+            left: -6px;
+            z-index: -1;
+        }
+    }
+
+    &.disabled {
+        opacity: 0.3;
+        z-index: 9;
+        cursor: not-allowed;
+        color: black;
+    }
+
+    &:not(.active).filled {
+        border: solid 1px black;
+        background-color: white;
+        margin-right: 10px;
+
+        label {
+            transition-duration: 300ms;
+            color: navy;
+            background-color: transparent;
+            position: absolute;
+            top: -7px;
+            font-size: 11px;
+            left: 30px;
+        }
+        .vut-ti-label-bg {
+            background-color: #ffffff;
+            display: inline-block;
+            width: calc(100% + 12px);
+            height: 3px;
+            position: absolute;
+            bottom: 5px;
+            left: -6px;
+            z-index: -1;
+        }
+    }
+
+    .vut-input-field-container:not(.disabled):hover,
+    .vut-input-field-container.focused {
+        border: solid 1px #d600001a;
+    }
+
+    .vut-input-field-container:not(.disabled):hover .vut-ti-label-bg,
+    .vut-input-field-container.focused .vut-ti-label-bg,
+    .vut-input-field-container.has-value .vut-ti-label-bg {
+        display: inline-block;
+        width: calc(100% + 12px);
+        height: 3px;
+        position: absolute;
+        bottom: 5px;
+        left: -6px;
+        z-index: -1;
+    }
+
+    .vut-input-field-container.active .vut-hint {
+        display: block;
+        animation-delay: 300s;
+        padding-bottom: 20px;
+    }
+    .faIcon {
+        width: 10px;
+        height: 10px;
+    }
+    .vut-error {
+        font-size: 10px;
+        left: 2px;
+        color: red;
+    }
+    .vut-warning {
+        font-size: 10px;
+        left: 2px;
+        color: orange;
+    }
+    .vut-success {
+        font-size: 10px;
+        left: 2px;
+        color: orange;
+        color: green;
+    }
+   
+}
+@media only screen and (min-width: 1441px) {
+    .vut-input-field-container {
+        min-width: 100%;
+        font-size: 14px;
+        padding: 25px 30px;
+        label {
+            font-size: 14px;
+        }
+        .vut-input-field-container.has-error input,
+        .vut-input-field-container .active input,
+        .has-value input {
+            height: 11px;
+            margin-top: 0px;
+            margin-left: -6px;
+        }
+    }
+}
+@media only screen and (max-width: 1440px) and (min-width: 1025px) {
+    .vut-input-field-container {
+        min-width: 100%;
+        font-size: 14px;
+        padding: 17px 30px;
+
+        label {
+            font-size: 14px;
+        }
+        .vut-input-field-container.has-error input,
+        .vut-input-field-container .active input,
+        .has-value input {
+            height: 11px;
+            margin-top: 0px;
+            margin-left: -6px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 769px) {
+    .vut-input-field-container {
+        min-width: 100%;
+        font-size: 13px;
+        padding: 25px 30px;
+        label {
+            font-size: 13px;
+        }
+        .vut-input-field-container .active input,
+        .has-value input {
+            height: 11px;
+            margin-top: 0px;
+            margin-left: -10px;
+        }
+        .vut-ti-error-msg {
+            display: block;
+            margin-left: -9px !important;
+        }
+    }
+}
+@media screen and (max-width: 768px) and (min-width: 481px) {
+    .vut-input-field-container {
+        min-width: 100%;
+        font-size: 13px;
+        padding: 15px 30px;
+
+        label {
+            font-size: 13px;
+        }
+        &.active {
+            .vut-ti-label-bg {
+                bottom: 6px;
+            }
+        }
+        &:not(.active).filled {
+            .vut-ti-label-bg {
+                bottom: 6px;
+            }
+        }
+        .vut-input-field-container .focused input,
+        .has-value input {
+            height: 11px;
+            margin-top: 0px;
+            margin-left: -10px;
+        }
+        .vut-ti-error-msg {
+            display: block;
+            margin-left: -9px !important;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .vut-input-field-container {
+        min-width: 100%;
+        font-size: 12px;
+        padding: 13px 20px;
+
+        input {
+            font-size: 12px;
+            left: 8px;
+        }
+
+        .vut-hint {
+            margin-left: 0px;
+        }
+        
+        .has-value input {
+            padding-left: 0px;
+        }
+
+        label {
+            font-size: 12px;
+        }
+        .MuiAccordionDetails-root {
+            padding-left: 11px;
+
+            .vut-ti-error-msg {
+                display: block;
+                margin-left: -15px !important;
+            }
+        }
+
+        .has-error input {
+            margin-left: -8px;
+        }
+        .vut-input-field-container.has-error input,
+        .vut-input-field-container .focused input {
+            height: 11px;
+            margin-top: 0px;
+            margin-left: -7px;
+        }
+        .vut-input-field-container.has-error input,
+        .vut-input-field-container .focused input,
+        .has-value input {
+            height: 11px;
+            margin-top: 0px;
+            margin-left: -6px;
+        }
+    }
+}

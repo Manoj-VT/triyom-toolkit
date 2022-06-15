@@ -1,0 +1,410 @@
+
+.vut-text-input {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    padding: 12px 30px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 30px 30px 30px 0;
+    transition-duration: 0.45s !important;
+
+    label {
+        position: absolute;
+        z-index: 1;
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.3);
+        transition-duration: .25s;
+        top: 14px;
+        left: 34px;
+        z-index: 0;
+    }
+
+    input {
+        width: calc(100% - 10px);
+        height: 20px;
+        outline: 0px solid transparent;
+        border: 0px solid transparent;
+        background-color: transparent;
+        box-sizing: border-box;
+        color: black;
+        position: relative;
+        margin-left: -8px;
+    }
+
+    .vut-ti-msg{
+        display: inline-block;
+    }
+
+    #delay {
+        animation: cssAnimation 500ms ease-in-out;
+    }
+
+    .vut-hint{
+        font-size: 9px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: left;
+        margin-top: -8px;
+        margin-bottom: 0px;
+        margin-left: -4px;
+        width: 154px;
+        opacity: 0.6;
+        color: black;
+        display: none;
+        animation-name: hint;
+        background-color: transparent;
+    }
+
+    .vut-text-input .vut-ti-error-msg {
+        padding-bottom: 44px;
+    }
+    
+    &:not(.disabled):hover,&.focused{
+        border: solid 1px ruby;
+
+        label {
+            color: black;
+        }
+
+        .vut-ti-label-bg {
+            display: inline-block;
+            width: calc(100% + 12px);
+            height: 2px;
+            position: absolute;
+            bottom: 5px;
+            left: -5px;
+            z-index: -1;
+        }
+    }
+
+    &.focused {
+        border: solid 1px #d10046;
+
+        @keyframes cssAnimation {
+            0%,
+            50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 0.6;
+            }
+        }
+
+        label {
+            color: #d10046;
+            top: -8px;
+            font-size: 11px;
+            left: 26px;
+        }
+
+        input{
+            width: calc(100% - 10px);
+            height: 20px;
+            outline: 0px solid transparent;
+            border: 0px solid transparent;
+            background-color: transparent;
+            box-sizing: border-box;
+            color: black;
+            position: relative;
+            margin-top: -17px;      
+          }
+
+        .vut-hint{
+            display: block;
+            animation-delay: 300s;
+            background-color: transparent;
+        }
+
+        .vut-ti-label-bg {
+            background-color: white;     
+            display: inline-block;
+            width: calc(100% + 12px);
+            height: 2px;
+            position: absolute;
+            bottom: 5px;
+            left: -5px;
+            z-index: -1;
+        }
+
+    }
+
+    &.has-value {
+        border: 1px solid black;
+
+        input{
+            width: calc(100% - 10px);
+            height: 20px;
+            outline: 0px solid transparent;
+            border: 0px solid transparent;
+            background-color: transparent;
+            box-sizing: border-box;
+            color: black;
+            position: relative;
+            margin-top: -17px;
+        }
+
+        .focused{
+            border: 1px solid #d10046;
+        }
+        label {
+            top: -8px;
+            font-size: 11px;
+            left: 26px;
+        .vut-hint{
+            display: none;
+        }
+            
+        .vut-ti-label-bg {
+            background-color: white;     
+            display: inline-block;
+            width: calc(100% + 12px);
+            height: 2px;
+            position: absolute;
+            bottom: 5px;
+            left: -5px;
+            z-index: -1;
+        }
+        
+    }
+    }
+
+    &.has-error,.focused{
+        background-color: #d10046;
+        color: #d10046;
+        font-size: 8px;
+        padding-right: 10px;
+
+        
+        .vut-ti-error-msg{
+            display: block;
+            margin-left: -7px;
+        }
+
+        .vut-hint{
+            margin-top: -8px;
+            margin-bottom: 2px;
+        }
+
+        input{
+            height:11px;
+            margin-top: 2px;
+            padding: 0px;
+        }
+
+        .vut-text-input.focused .has-error .vut-ti-label-bg {
+            background-color: white;
+            transition-duration: 3s;
+        }
+           
+        .vut-ti-label-bg {
+            background-color: white;     
+            display: inline-block;
+            width: calc(100% + 12px);
+            height: 2px;
+            position: absolute;
+            bottom: 5px;
+            left: -5px;
+            z-index: -1;
+            }
+
+        .vut-ti-label-bg {
+            background-color: white;
+        }
+        .vut-hint{
+            animation-delay: 300s;
+        }
+        
+    }
+
+    &.disabled{
+        opacity: 0.3;
+        color: black
+    }
+
+    .vut-ti-error-msg {
+        color: ruby;
+        background-color: #fbe5e5;
+
+        .vut-hint{
+            display: none;
+        }
+    }
+
+    .vut-text-input:not(.disabled):hover, .vut-text-input.focused {
+        border: solid 1px #d10046;
+        
+    }
+    
+    .vut-text-input:not(.disabled):hover
+     .vut-ti-label-bg, .vut-text-input.focused 
+     .vut-ti-label-bg,.vut-text-input.has-value
+      .vut-ti-label-bg {
+        display: inline-block;
+        width: calc(100% + 12px);
+        height: 2px;
+        position: absolute;
+        bottom: 5px;
+        left: -5px;
+        z-index: -1;
+    }
+
+
+    .MuiAccordionDetails-root{
+        padding: 0;
+        margin-top: 2px;
+    }
+
+  
+    .MuiPaper-root-MuiAccordion-root {
+    color: rgba(0,0,0,0.87);
+    -webkit-transition: box-shadow 300ms cubic-bezier(0.4,0,0.2,1) 0ms;
+    transition: box-shadow 300ms cubic-bezier(0.4,0,0.2,1) 0ms;
+    border-radius: 4px;
+    position: relative;
+    -webkit-transition: margin 150ms cubic-bezier(0.4,0,0.2,1) 0ms;
+    transition: margin 150ms cubic-bezier(0.4,0,0.2,1) 0ms;
+    overflow-anchor: none;
+    border-radius: 0;
+    }
+
+    .MuiAccordion-gutters::before{
+        display: none !important;
+    }
+    .MuiAccordion-root {
+        color: rgba(0,0,0,0.87);
+        -webkit-transition: box-shadow 300ms cubic-bezier(0.4,0,0.2,1) 0ms;
+        transition: box-shadow 300ms cubic-bezier(0.4,0,0.2,1) 0ms;
+        border-radius: 4px;
+        position: relative;
+        -webkit-transition: margin 150ms cubic-bezier(0.4,0,0.2,1) 0ms;
+        transition: margin 150ms cubic-bezier(0.4,0,0.2,1) 0ms;
+        overflow-anchor: none;
+        border-radius: 0;
+    }
+ 
+    .MuiPaper-elevation{
+        box-shadow: none;
+        background-color: transparent;
+    }
+    .vut-error-hint{
+        background-color: #fbe5e5;
+    }
+
+    .Mui-expanded{
+        margin: 0px !important;
+    }
+    
+}
+@media only screen and (min-width: 1921px )and (max-width: 1920px) {
+    .vut-text-input {
+        min-width: 100%;
+        font-size: 14px;
+        padding: 17px 30px;
+    }
+    label{
+        font-size: 14px;
+    }
+    .vut-text-input.has-error input, .vut-text-input .focused input, .has-value input {
+            height: 17px;
+            margin-top: 0px;
+            margin-left: -6px;
+    }
+       
+  }
+
+  @media only screen and (max-width: 1366px )and (max-width: 768px) {
+    .vut-text-input {
+        min-width: 100%;
+        font-size: 14px;
+        padding: 15px 30px;
+    }
+    label{
+        font-size: 13px;
+    }
+    .vut-text-input .focused input, .has-value input {
+        height: 17px;
+        margin-top: 0px;
+        margin-left: -10px;
+    }
+    .vut-ti-error-msg{
+        display: block;
+        margin-left: -9px !important;
+    }
+  }
+
+  @media only screen and (max-width: 767px )and (min-width: 361px) {
+    .vut-text-input {
+        min-width: 100%;
+        font-size: 13px;
+        padding: 15px 30px;
+    }
+    label{
+        font-size: 13px;
+    }
+    .vut-text-input .focused input, .has-value input {
+        height: 17px;
+        margin-top: 0px;
+        margin-left: -10px;
+    }
+    .vut-ti-error-msg{
+        display: block;
+        margin-left: -9px !important;
+    }
+  }
+
+  @media only screen and (max-width: 360px ) {
+    .vut-text-input {
+        min-width: 100%;
+        font-size: 14px;
+        padding: 13px 20px;
+        
+        input {
+            font-size: 12px;
+            left: 8px;
+        }
+
+        .vut-hint {
+            margin-left: 0px;
+        }
+
+        .has-value input {
+            padding-left: 0px;
+        }
+
+        label{
+            font-size: 12px;
+        }
+        .MuiAccordionDetails-root {
+            padding-left: 11px;
+            
+            .vut-ti-error-msg{
+                display: block;
+                margin-left: -15px !important;
+            }
+        }
+        
+        .has-error input{
+            margin-left: -8px;
+        }
+        .vut-text-input.has-error input, .vut-text-input .focused input {
+            height: 17px;
+            margin-top: 0px;
+            margin-left: -7px;
+        }
+        .vut-text-input.has-error input, .vut-text-input .focused input, .has-value input {
+            height: 17px;
+            margin-top: 0px;
+            margin-left: -6px;
+        }
+    }
+    
+    
+}
+
+
+
